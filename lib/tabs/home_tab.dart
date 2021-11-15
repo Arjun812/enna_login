@@ -51,45 +51,48 @@ class _HomeTabState extends State<HomeTab> {
               color: Color(0xA6000000),
             ),
             const SizedBox(width: 15),
-            Container(
-              alignment: Alignment.centerLeft,
-              decoration: BoxDecoration(
-                color: white,
-                borderRadius: BorderRadius.circular(2),
-              ),
-              height: 45,
-              width: 300,
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(color: Colors.black),
-                decoration: InputDecoration(
-                  suffixIcon: Container(
-                    padding: EdgeInsets.all(14),
-                    width: 3,
-                    height: 3,
-                    child: Image.asset(
-                      'assets/images/search.png',
-                      color: Colors.grey,
+            Expanded(
+              child: Container(
+                alignment: Alignment.centerLeft,
+                decoration: BoxDecoration(
+                  color: white,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+                height: 45,
+                child: TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  style: const TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    suffixIcon: Container(
+                      padding: EdgeInsets.all(14),
+                      width: 3,
+                      height: 3,
+                      child: Image.asset(
+                        'assets/images/search.png',
+                        color: Colors.grey,
 
-                      // IconButton(
-                      //   onPressed: (){},
-                      //   icon:Icon(Icons.search)
+                        // IconButton(
+                        //   onPressed: (){},
+                        //   icon:Icon(Icons.search)
+                      ),
                     ),
-                  ),
-                  hintText: 'Search for businesses',
-                  hintStyle: const TextStyle(
-                    fontSize: 13,
-                    color: Color(0xA6000000),
-                    fontWeight: FontWeight.w400,
-                  ),
-                  border: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.grey,
+                    hintText: 'Search for businesses',
+                    hintStyle: const TextStyle(
+                      fontSize: 13,
+                      color: Color(0xA6000000),
+                      fontWeight: FontWeight.w400,
+                    ),
+                    border: const OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                 ),
               ),
-            )
+            ),
+            const SizedBox(width: 20),
+
           ],
         ),
         const Padding(
