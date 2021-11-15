@@ -26,9 +26,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               const SizedBox(height: 30),
               Row(
-                // crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
-
                 children: [
                   const Text(
                     'Language:  ',
@@ -56,9 +54,8 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'EN',
                             style: TextStyle(
-                              color: change == false
-                                  ? Colors.white
-                                  : Colors.black,
+                              color:
+                                  change == false ? Colors.white : Colors.black,
                             ),
                           ),
                         ),
@@ -87,9 +84,8 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'عر',
                             style: TextStyle(
-                              color: change == true
-                                  ? Colors.white
-                                  : Colors.black,
+                              color:
+                                  change == true ? Colors.white : Colors.black,
                             ),
                           ),
                         ),
@@ -106,8 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: blue,
                     fontSize: 40,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'poppins'
-                ),
+                    fontFamily: 'poppins'),
               ),
               const SizedBox(
                 height: 50,

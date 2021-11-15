@@ -14,7 +14,7 @@ class HomeTab extends StatefulWidget {
 class _HomeTabState extends State<HomeTab> {
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
@@ -24,19 +24,19 @@ class _HomeTabState extends State<HomeTab> {
             tabs: <Widget>[
               Container(
                 color: blue,
-                width:MediaQuery.of(context).size.width,
+                width: MediaQuery.of(context).size.width,
                 // width:double.infinity,
                 child: const Tab(
-                  child: Text("CONTACTS",
-                    style: TextStyle(
-                        color: Colors.white),
+                  child: Text(
+                    "CONTACTS",
+                    style: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
               const Tab(
-                child: Text("BUSINESSES",
-                  style: TextStyle(
-                      color: Colors.white),
+                child: Text(
+                  "BUSINESSES",
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
@@ -44,9 +44,9 @@ class _HomeTabState extends State<HomeTab> {
         ),
         Row(
           children: [
-            const SizedBox(width: 20,
-                height: 80),
-            const Icon(Icons.arrow_back_ios,
+            const SizedBox(width: 20, height: 80),
+            const Icon(
+              Icons.arrow_back_ios,
               size: 18,
               color: Color(0xA6000000),
             ),
@@ -55,21 +55,20 @@ class _HomeTabState extends State<HomeTab> {
               alignment: Alignment.centerLeft,
               decoration: BoxDecoration(
                 color: white,
-                borderRadius:  BorderRadius.circular(2),
+                borderRadius: BorderRadius.circular(2),
               ),
               height: 45,
               width: 300,
-              child:   TextFormField(
+              child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
-                style: const TextStyle(
-                    color: Colors.black
-                ),
+                style: const TextStyle(color: Colors.black),
                 decoration: InputDecoration(
                   suffixIcon: Container(
                     padding: EdgeInsets.all(14),
                     width: 3,
                     height: 3,
-                    child: Image.asset('assets/images/search.png',
+                    child: Image.asset(
+                      'assets/images/search.png',
                       color: Colors.grey,
 
                       // IconButton(
@@ -94,11 +93,11 @@ class _HomeTabState extends State<HomeTab> {
           ],
         ),
         const Padding(
-          padding: EdgeInsets.only(left:20.0),
-          child: Text('Restaurants',style: TextStyle(
-            fontSize: 17,
-            fontWeight: FontWeight.bold
-          ),),
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
+            'Restaurants',
+            style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+          ),
         ),
         Expanded(
           child: ListView.builder(
@@ -107,8 +106,8 @@ class _HomeTabState extends State<HomeTab> {
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 20, vertical: 5),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   child: Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
@@ -137,47 +136,41 @@ class _HomeTabState extends State<HomeTab> {
                           ),
                           const SizedBox(height: 5),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 children: [
                                   const Icon(Icons.person,
-                                      size: 17,
-                                      color: Colors.grey),
+                                      size: 17, color: Colors.grey),
                                   const SizedBox(width: 5),
                                   Text(
                                     restaurantList[index].userName,
-                                    style:
-                                    const TextStyle(color: Colors.grey),
+                                    style: const TextStyle(color: Colors.grey),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
-                                  const Icon(Icons.call,
+                                  const Icon(
+                                    Icons.call,
                                     color: Colors.grey,
-                                    size: 17,),
+                                    size: 17,
+                                  ),
                                   const SizedBox(width: 5),
                                   Text(
                                     restaurantList[index].teleNumber,
-                                    style:
-                                    const TextStyle(color: Colors.grey),
+                                    style: const TextStyle(color: Colors.grey),
                                   ),
                                 ],
                               ),
                               Row(
                                 children: [
                                   const Icon(Boxicons.bx_mobile,
-                                      color: Colors.grey,
-                                      size: 17
-                                  ),
+                                      color: Colors.grey, size: 17),
                                   const SizedBox(width: 5),
-
                                   Text(
                                     restaurantList[index].mobNumber,
-                                    style:
-                                    const TextStyle(color: Colors.grey),
+                                    style: const TextStyle(color: Colors.grey),
                                   ),
                                 ],
                               ),
@@ -185,37 +178,35 @@ class _HomeTabState extends State<HomeTab> {
                           ),
                           const SizedBox(height: 5),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Column(
                                 children: [
                                   Row(
                                     children: [
                                       const Icon(Icons.email,
-                                          color: Colors.grey,
-                                          size: 17),
+                                          color: Colors.grey, size: 17),
                                       const SizedBox(width: 5),
                                       Text(
                                         restaurantList[index].email,
-                                        style: const TextStyle(
-                                            color: Colors.grey),
+                                        style:
+                                            const TextStyle(color: Colors.grey),
                                       ),
                                     ],
                                   ),
                                   const SizedBox(height: 5),
                                   Row(
                                     children: [
-                                      const Icon(MdiIcons.web,
-
+                                      const Icon(
+                                        MdiIcons.web,
                                         size: 17,
                                         color: Colors.grey,
                                       ),
                                       const SizedBox(width: 5),
                                       Text(
                                         restaurantList[index].webSite,
-                                        style: const TextStyle(
-                                            color: Colors.grey),
+                                        style:
+                                            const TextStyle(color: Colors.grey),
                                       ),
                                     ],
                                   ),
@@ -253,8 +244,7 @@ class _HomeTabState extends State<HomeTab> {
                     ),
                   ),
                 );
-              }
-          ),
+              }),
         )
       ],
     );
