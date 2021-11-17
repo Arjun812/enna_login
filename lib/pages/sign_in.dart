@@ -1,11 +1,14 @@
 
+import 'package:enna_login/api/api_service.dart';
+
 import 'homepage.dart';
 import 'package:flutter/material.dart';
 import '../Constants/constants.dart';
 
 
 
-Widget signIn(context) {
+Widget signIn({required BuildContext context, required String username, required String password}) {
+  final ApiService _apiService = ApiService();
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -26,10 +29,19 @@ Widget signIn(context) {
                 height: 100,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                    print(username);
+                    print(password);
+                    _apiService.Login(username_:username ,password_: password ).then((value) {
+                      //print(value!.response!.status);
+                      if(value?.response?.status == true ){
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomePage()),
+                        );
+                      }
+                    }
                     );
+
                   },
                   child: const Text('Sign in',
                   style: TextStyle(

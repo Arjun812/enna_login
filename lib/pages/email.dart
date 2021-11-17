@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants/constants.dart';
 
 
-Widget buildEmail(){
+Widget buildEmail({required TextEditingController controller_}){
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: Column(
@@ -25,12 +25,13 @@ Widget buildEmail(){
             borderRadius:  BorderRadius.circular(2),
           ),
           height: 50,
-          child:  const TextField(
+          child: TextField(
+            controller: controller_,
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Colors.black
             ),
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Email or Phone Number',
               hintStyle: TextStyle(
                   fontSize: 13,

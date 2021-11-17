@@ -38,6 +38,10 @@ dependencies:
   google_fonts: ^2.1.0
   material_design_icons_flutter: ^5.0.6295
   flutter_boxicons: ^3.0.0
+  http: ^0.13.4
+  bloc:
+  equatable:
+  flutter_lints: ^1.0.0
 
 
 dev_dependencies:

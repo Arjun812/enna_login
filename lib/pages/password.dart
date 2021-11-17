@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/constants.dart';
 
-Widget password() {
+Widget password({required TextEditingController passwordController_}) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: Column(
@@ -16,10 +16,11 @@ Widget password() {
             borderRadius: BorderRadius.circular(2),
           ),
           height: 50,
-          child: const TextField(
+          child:  TextField(
+            controller: passwordController_,
             obscureText: true,
-            style: TextStyle(color: Colors.black),
-            decoration: InputDecoration(
+            style: const TextStyle(color: Colors.black),
+            decoration: const InputDecoration(
               hintText: 'Password',
               hintStyle: TextStyle(
                   fontSize: 13,

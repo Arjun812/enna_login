@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:enna_login/api/api_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/constants.dart';
@@ -5,6 +8,7 @@ import 'email.dart';
 import 'password.dart';
 import 'sign_in.dart';
 import 'sign_up.dart';
+import 'package:http/http.dart' as http;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -14,7 +18,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  ApiService _apiService=ApiService();
   bool change = false;
+  final email_ = TextEditingController();
+  final password_ = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -110,9 +117,9 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 50,
                   ),
-                  buildEmail(),
-                  password(),
-                  signIn(context),
+                  buildEmail(controller_: email_),
+                  password(passwordController_: password_),
+                  signIn(context:context, username: email_.text,password: password_.text ),
                   signUp(),
                 ],
               ),
